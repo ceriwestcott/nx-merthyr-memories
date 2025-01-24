@@ -1,11 +1,29 @@
-import NxWelcome from './nx-welcome';
+import { Navigation } from '@nx-merthyr-memories/ui';
+import { BrowserRouter, RouteObject, useRoutes } from 'react-router-dom';
+import { lazy, Suspense } from 'react';
+const SplashPage = lazy(() => import('../pages/SpashPage/SplashPage'));
 
-export function App() {
+export const routes: RouteObject[] = [
+  {
+    path: '/',
+    element: <SplashPage />,
+  },
+];
+
+function App() {
+  const element = useRoutes(routes);
   return (
     <div>
-      <NxWelcome title="merthyr-memories" />
+      <Navigation title="Merthyr Memories" links={[]} />
+      <Suspense fallback={<div>Loading...</div>}>{element}</Suspense>
     </div>
   );
 }
 
-export default App;
+export default function WrappedApp() {
+  return (
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  );
+}

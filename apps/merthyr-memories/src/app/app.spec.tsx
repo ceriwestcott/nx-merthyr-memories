@@ -12,4 +12,9 @@ describe('App', () => {
     const { getByText } = render(<App />);
     expect(getByText(/Welcome merthyr-memories/gi)).toBeTruthy();
   });
+
+  it('should render the splash page', () => {
+    const { getByText } = render(<App />);
+    expect(getByText(/Welcome merthyr-memories/gi)).toBeTruthy();
+  });
 });
