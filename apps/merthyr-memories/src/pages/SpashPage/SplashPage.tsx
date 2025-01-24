@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Camera, BookOpen, MapPin } from 'lucide-react';
+import { Button } from '@nx-merthyr-memories/ui';
 
 function SplashPage() {
   return (
@@ -29,19 +30,21 @@ function SplashPage() {
                 through the stories, photos, and memories of its people.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  to="/locations"
-                  className="px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-flex items-center justify-center"
-                >
-                  <MapPin className="w-5 h-5 mr-2" />
-                  Explore Areas
+                <Link to="/locations">
+                  <Button
+                    label="Explore Areas"
+                    variant="primary"
+                    icon={<MapPin className="w-5 h-5 mr-2" />}
+                    onClick={() => {}}
+                  />
                 </Link>
-                <Link
-                  to="/stories"
-                  className="px-8 py-3 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-center"
-                >
-                  <BookOpen className="w-5 h-5 mr-2" />
-                  Read Stories
+                <Link to="/stories">
+                  <Button
+                    label="Read Stories"
+                    variant="secondary"
+                    icon={<BookOpen className="w-5 h-5 mr-2" />}
+                    onClick={() => {}}
+                  />
                 </Link>
               </div>
             </div>
@@ -121,8 +124,11 @@ function SplashPage() {
                   to="/gallery"
                   className="inline-flex items-center text-blue-600 hover:text-blue-700"
                 >
-                  <Camera className="w-5 h-5 mr-2" />
-                  Browse Gallery
+                  <Button
+                    label="Browse Gallery"
+                    variant="primary"
+                    icon={<Camera className="w-5 h-5 mr-2" />}
+                  />
                 </Link>
               </div>
             </div>
@@ -142,8 +148,11 @@ function SplashPage() {
                   to="/stories"
                   className="inline-flex items-center text-blue-600 hover:text-blue-700"
                 >
-                  <BookOpen className="w-5 h-5 mr-2" />
-                  Read Stories
+                  <Button
+                    label="Read Stories"
+                    variant="secondary"
+                    icon={<BookOpen className="w-5 h-5 mr-2" />}
+                  />
                 </Link>
               </div>
             </div>

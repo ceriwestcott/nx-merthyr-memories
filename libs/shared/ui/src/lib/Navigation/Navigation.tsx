@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 interface NavigationProps {
   title: string;
-  links: {
+  links?: {
     label: string;
-    href: string;
-    icon: React.ReactNode;
+    to: string;
+    icon?: React.ReactNode;
   }[];
 }
 

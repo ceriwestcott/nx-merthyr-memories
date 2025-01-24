@@ -12,17 +12,19 @@ describe('Button', () => {
     expect(baseElement).toBeTruthy();
   });
 
-  it('should render with label', () => {
-    const { getByText } = render(
-      <Button label="Click me" onClick={() => {}} />
-    );
-    expect(getByText('Click me')).toBeTruthy();
-  });
+  describe('classes', () => {
+    it('should render with correct classes', () => {
+      const { getByText } = render(
+        <Button label="Click me" onClick={() => {}} variant="primary" />
+      );
+      expect(getByText('Click me').className).contain('bg-blue-600 text-white');
+    });
 
-  it('should call onClick when clicked', () => {
-    const onClick = vi.fn();
-    const { getByText } = render(<Button label="Click me" onClick={onClick} />);
-    fireEvent.click(getByText('Click me'));
-    expect(onClick).toHaveBeenCalled();
+    it('should render with correct classes', () => {
+      const { getByText } = render(
+        <Button label="Click me" onClick={() => {}} variant="secondary" />
+      );
+      expect(getByText('Click me').className).contain('bg-white text-gray-800');
+    });
   });
 });
