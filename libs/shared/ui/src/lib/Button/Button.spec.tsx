@@ -1,28 +1,28 @@
 import { render } from '@testing-library/react';
-
 import { Button } from './Button';
-import { fireEvent } from '@testing-library/react';
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect } from 'vitest';
 
 describe('Button', () => {
   it('should render successfully', () => {
     const { baseElement } = render(
-      <Button label="Click me" onClick={() => {}} variant="primary" />
+      <Button label="Click me" variant="primary" />
     );
     expect(baseElement).toBeTruthy();
   });
 
-  it('should render with label', () => {
-    const { getByText } = render(
-      <Button label="Click me" onClick={() => {}} />
-    );
-    expect(getByText('Click me')).toBeTruthy();
-  });
+  describe('classes', () => {
+    it('should render with correct classes', () => {
+      const { getByText } = render(
+        <Button label="Click me" variant="primary" />
+      );
+      expect(getByText('Click me').className).contain('bg-blue-600 text-white');
+    });
 
-  it('should call onClick when clicked', () => {
-    const onClick = vi.fn();
-    const { getByText } = render(<Button label="Click me" onClick={onClick} />);
-    fireEvent.click(getByText('Click me'));
-    expect(onClick).toHaveBeenCalled();
+    it('should render with correct classes', () => {
+      const { getByText } = render(
+        <Button label="Click me"  variant="secondary" />
+      );
+      expect(getByText('Click me').className).contain('bg-white text-gray-800');
+    });
   });
 });
