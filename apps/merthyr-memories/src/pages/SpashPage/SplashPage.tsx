@@ -35,7 +35,6 @@ function SplashPage() {
                     label="Explore Areas"
                     variant="primary"
                     icon={<MapPin className="w-5 h-5 mr-2" />}
-                    onClick={() => {}}
                   />
                 </Link>
                 <Link to="/stories">
@@ -43,7 +42,6 @@ function SplashPage() {
                     label="Read Stories"
                     variant="secondary"
                     icon={<BookOpen className="w-5 h-5 mr-2" />}
-                    onClick={() => {}}
                   />
                 </Link>
               </div>
