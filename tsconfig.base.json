@@ -15,7 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-merthyr-memories/ui": ["libs/shared/ui/src/index.ts"]
+      "@merthyr-memories/utils": ["libs/shared/utils/src/index.ts"],
+      "@nx-merthyr-memories/ui": ["libs/shared/ui/src/index.ts"],
+      "@merthyr-memories/api": ["libs/shared/api/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
